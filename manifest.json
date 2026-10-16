@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Google Maps 圖片影片遮蔽",
+  "version": "1.0.0",
+  "description": "把 Google Maps 上的照片、影片與頭像換成灰色色塊。",
+  "permissions": ["storage", "declarativeNetRequest", "webNavigation"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*"],
+      "include_globs": ["https://www.google.*/maps*", "https://maps.google.*/*"],
+      "css": ["content.css"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "遮蔽Google Maps的照片與影片",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  }
+}

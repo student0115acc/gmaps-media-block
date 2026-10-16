@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 260px; margin: 0; padding: 14px 16px; font: 14px/1.5 "Microsoft JhengHei", sans-serif; color: #202124; }
+    .row { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-weight: bold; }
+    input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; flex: none; }
+    p { margin: 8px 0 0; font-size: 12px; color: #5f6368; }
+    form { margin-top: 12px; display: grid; gap: 6px; }
+    form[hidden] { display: none; }
+    input[type="password"] { padding: 5px 8px; border: 1px solid #dadce0; border-radius: 4px; font: inherit; }
+    .buttons { display: flex; gap: 6px; justify-content: flex-end; }
+    button { padding: 4px 12px; border: 1px solid #dadce0; border-radius: 4px; background: #fff; font: inherit; cursor: pointer; }
+    button[type="submit"] { background: #1a73e8; border-color: #1a73e8; color: #fff; }
+    .error { color: #d93025; min-height: 18px; margin: 0; }
+    .link { margin-top: 10px; padding: 0; border: none; background: none; color: #1a73e8; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <label class="row">遮蔽Google Maps的照片與影片 <input type="checkbox" id="enabled"></label>
+  <p id="hint"></p>
+
+  <form id="unlock" hidden>
+    <span id="unlock-title"></span>
+    <input type="password" id="unlock-pw" placeholder="請輸入密碼">
+    <p class="error" id="unlock-error"></p>
+    <div class="buttons"><button type="button" data-cancel>取消</button><button type="submit">確認</button></div>
+  </form>
+
+  <form id="change" hidden>
+    <span>變更密碼</span>
+    <input type="password" id="old-pw" placeholder="目前密碼">
+    <input type="password" id="new-pw" placeholder="新密碼">
+    <input type="password" id="new-pw2" placeholder="再輸入一次新密碼">
+    <p class="error" id="change-error"></p>
+    <div class="buttons"><button type="button" data-cancel>取消</button><button type="submit">儲存</button></div>
+  </form>
+
+  <button type="button" class="link" id="show-change">變更密碼</button>
+  <script src="popup.js"></script>
+</body>
+</html>
