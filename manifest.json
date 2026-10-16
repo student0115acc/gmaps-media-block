@@ -2,6 +2,7 @@
   "manifest_version": 3,
   "name": "Google Maps 圖片影片遮蔽",
   "version": "1.0.0",
+  "update_url": "https://student0115acc.github.io/gmaps-media-block/update.xml",
   "description": "把 Google Maps 上的照片、影片與頭像換成灰色色塊。",
   "permissions": ["storage", "declarativeNetRequest", "webNavigation"],
   "background": {
